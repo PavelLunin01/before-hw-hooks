@@ -1,12 +1,11 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import CollapseWrapper from "../common/collapse";
 const UseRefExercise = () => {
-    const [text, setText] = useState("false");
     const button = useRef();
     const changeStyle = () => {
         button.current.style.width = "150px";
         button.current.style.height = "80px";
-       setText(prevState => prevState === "true" ? "false" : "true");
+        button.current.innerHTML = "text";
     };
     return (
         <CollapseWrapper title="Упражнение">
@@ -27,7 +26,7 @@ const UseRefExercise = () => {
                     color: "white"
                 }}
             >
-                <small>{text === "false" ? "Блок" : "Text"}</small>
+                <small>Блок</small>
             </div>
             <button className="btn btn-primary m-2" onClick={changeStyle}>
                 click
